@@ -1,16 +1,9 @@
 {
-  "version": "2.2.2",
-  "releaseUrl": "https://github.com/chakra-ui/chakra-ui/releases/tag/@chakra-ui/react@2.2.2",
+  "version": "2.2.3",
+  "releaseUrl": "https://github.com/chakra-ui/chakra-ui/releases/tag/@chakra-ui/react@2.2.3",
   "patches": [
-    "- Remove internal usage of createBreakpoints function \n",
-    "- extend doc for `fadeDuration` prop \n",
-    "- Add --no-format option \n",
-    "- Fix issue where CLI crashed due to lodash throttle dependency \n"
+    "- Add border radius of zero to the default full size modal \n",
+    "- Fix hydration issues when using Suspense \n"
   ],
-  "features": [
-    "- Check if the MediaQueryList object supports the addEventListener() method, else\nfallback to the legacy .addListener() method. \n",
-    "- Extract and export `getToken` function from `useToken`\n- Improve parameter types for `useToken`",
-    "- Remove internal usage of createBreakpoints function \n",
-    "- Export `useDrawerContext` hook \n"
-  ]
+  "features": []
 }
