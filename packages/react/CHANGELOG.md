@@ -1,5 +1,22 @@
 # Change Log
 
+## 2.2.3
+
+### Patch Changes
+
+- Updated dependencies
+  [[`be7a20f15`](https://github.com/chakra-ui/chakra-ui/commit/be7a20f155e571a24cb99f28a5b9a60fa3b80a61),
+  [`3d8e095df`](https://github.com/chakra-ui/chakra-ui/commit/3d8e095dfc696b3d903455319231e77d1c21d875)]:
+  - @chakra-ui/theme@2.1.2
+  - @chakra-ui/react-env@2.0.3
+  - @chakra-ui/media-query@3.1.2
+  - @chakra-ui/portal@2.0.3
+  - @chakra-ui/toast@3.0.1
+  - @chakra-ui/provider@2.0.8
+  - @chakra-ui/skeleton@2.0.8
+  - @chakra-ui/modal@2.1.1
+  - @chakra-ui/tooltip@2.0.4
+
 ## 2.2.2
 
 ### Patch Changes

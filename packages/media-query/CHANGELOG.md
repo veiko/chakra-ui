@@ -1,5 +1,18 @@
 # Change Log
 
+## 3.1.2
+
+### Patch Changes
+
+- [#6171](https://github.com/chakra-ui/chakra-ui/pull/6171)
+  [`3d8e095df`](https://github.com/chakra-ui/chakra-ui/commit/3d8e095dfc696b3d903455319231e77d1c21d875)
+  Thanks [@itkrt2y](https://github.com/itkrt2y)! - Fix hydration issues when
+  using Suspense
+
+- Updated dependencies
+  [[`3d8e095df`](https://github.com/chakra-ui/chakra-ui/commit/3d8e095dfc696b3d903455319231e77d1c21d875)]:
+  - @chakra-ui/react-env@2.0.3
+
 ## 3.1.1
 
 ### Patch Changes
