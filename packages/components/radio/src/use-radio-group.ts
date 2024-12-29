@@ -117,6 +117,7 @@ export function useRadioGroup(props: UseRadioGroupProps = {}) {
   const getRootProps: PropGetter = useCallback(
     (props = {}, forwardedRef = null) => ({
       ...props,
+      "aria-label": props["aria-label"] || "radio group",
       ref: mergeRefs(forwardedRef, ref),
       role: "radiogroup",
     }),

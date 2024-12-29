@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom/extend-expect"
 import { RenderOptions } from "@testing-library/react"
 import { axe, toHaveNoViolations, JestAxeConfigureOptions } from "jest-axe"
+import "jest-a11y"
 import * as React from "react"
 import { render } from "./render"
 
@@ -14,4 +15,8 @@ export async function testA11y(
   const container = React.isValidElement(ui) ? render(ui, rest).container : ui
   const results = await axe(container, axeOptions)
   expect(results).toHaveNoViolations()
+}
+
+export async function newTest() {
+  expect(true).toBeAccessibleAccordion()
 }

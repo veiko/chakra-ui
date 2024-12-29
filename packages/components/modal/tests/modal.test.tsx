@@ -38,6 +38,8 @@ test("should have no accessibility violations", async () => {
       },
     },
   })
+
+  // expect(baseElement).toBeAccessibleDialog()
 })
 
 test("should have the proper 'aria' attributes", () => {

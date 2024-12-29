@@ -10,6 +10,7 @@ import {
   SliderTrack,
   UseSliderProps,
 } from "../src"
+import { act } from "react-dom/test-utils"
 
 const defaultValue = 10
 
@@ -73,11 +74,15 @@ const SimpleStyledSlider = (props: {
   </StyledSlider>
 )
 
-test("passes a11y test", async () => {
+test.only("passes a11y test", async () => {
   Object.defineProperty(window, "requestAnimationFrame", {
     value: jest.fn((cb) => cb()),
   })
   await testA11y(<SimpleSlider />)
+
+  act(() => {
+    expect(screen.getByRole("slider")).toBeAccessibleSlider()
+  })
 })
 
 test("should move the thumb", async () => {

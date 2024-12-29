@@ -13,6 +13,8 @@ import {
 
 it("passes a11y test", async () => {
   await testA11y(<Checkbox>label</Checkbox>)
+
+  expect(screen.getByRole("checkbox")).toBeAccessibleCheckbox()
 })
 
 test("Uncontrolled - should check and uncheck", () => {

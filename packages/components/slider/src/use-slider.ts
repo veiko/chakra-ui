@@ -279,10 +279,12 @@ export function useSlider(props: UseSliderProps) {
   const actions: SliderActions = useMemo(
     () => ({
       stepUp(step = oneStep) {
+        console.log("stepUp")
         const next = isReversed ? value - step : value + step
         constrain(next)
       },
       stepDown(step = oneStep) {
+        console.log("stepDown")
         const next = isReversed ? value + step : value - step
         constrain(next)
       },

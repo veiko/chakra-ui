@@ -1,7 +1,19 @@
 import { FormControl, FormLabel } from "@chakra-ui/form-control"
-import { render, fireEvent } from "@chakra-ui/test-utils"
+import { render, fireEvent, screen, testA11y } from "@chakra-ui/test-utils"
 import * as React from "react"
 import { Switch } from "../src"
+
+test("passes a11y test", async () => {
+  const { container } = render(
+    <>
+      <label htmlFor="email-alerts">E-mail Alerts</label>
+      <Switch id="email-alerts" />
+    </>,
+  )
+
+  await testA11y(container)
+  await expect(screen.getByRole("checkbox")).toBeAccessibleInputSwitch()
+})
 
 test("Uncontrolled - should check and uncheck", async () => {
   const { container, user } = render(<Switch />)

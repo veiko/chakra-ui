@@ -5,6 +5,8 @@ import { Button, ButtonGroup } from "../src"
 
 it("passes a11y test", async () => {
   await testA11y(<Button>test</Button>)
+
+  expect(screen.getByRole("button")).toBeAccessibleButton()
 })
 
 test("renders with icons", () => {

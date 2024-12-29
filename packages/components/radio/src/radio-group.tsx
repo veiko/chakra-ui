@@ -88,6 +88,7 @@ export const RadioGroup = forwardRef<RadioGroupProps, "div">((props, ref) => {
     <RadioGroupProvider value={group}>
       <chakra.div
         {...getRootProps(htmlProps as any, ref)}
+        aria-label="radio group"
         className={cx("chakra-radio-group", className)}
       >
         {children}

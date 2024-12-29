@@ -1,7 +1,31 @@
 import { FormControl } from "@chakra-ui/form-control"
-import { fireEvent, render, waitFor } from "@chakra-ui/test-utils"
+import {
+  fireEvent,
+  render,
+  testA11y,
+  waitFor,
+  screen,
+} from "@chakra-ui/test-utils"
 import * as React from "react"
+import { act } from "react-dom/test-utils"
 import { Radio, useRadioGroup, UseRadioGroupProps, RadioGroup } from "../src"
+
+test("passes a11y test", async () => {
+  const Component = (props: UseRadioGroupProps = {}) => {
+    const { getRootProps, getRadioProps } = useRadioGroup(props)
+
+    return (
+      <div {...getRootProps()}>
+        <Radio {...getRadioProps({ value: "a" })}>a</Radio>
+        <Radio {...getRadioProps({ value: "b" })}>b</Radio>
+      </div>
+    )
+  }
+  const { container } = render(<Component defaultValue="a" />)
+
+  await testA11y(container)
+  await expect(screen.getByRole("radiogroup")).toBeAccessibleRadioGroup()
+})
 
 test("works with Radio component", () => {
   const Component = (props: UseRadioGroupProps = {}) => {

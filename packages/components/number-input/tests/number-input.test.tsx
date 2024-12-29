@@ -23,7 +23,7 @@ function renderComponent(props: NumberInputProps = {}) {
   return render(
     <>
       <label htmlFor="input">Select number:</label>
-      <NumberInput id="input" data-testid="root" {...props}>
+      <NumberInput id="input" defaultValue={15} data-testid="root" {...props}>
         <NumberInputField data-testid="input" />
         <NumberInputStepper data-testid="group">
           <NumberIncrementStepper children="+" data-testid="up-btn" />
@@ -43,6 +43,8 @@ function renderComponent(props: NumberInputProps = {}) {
 test("passes a11y test", async () => {
   const { container } = renderComponent()
   await testA11y(container)
+
+  await expect(screen.getByRole("spinbutton")).toBeAccessibleSpinButton()
 })
 
 test("should start with empty string", () => {

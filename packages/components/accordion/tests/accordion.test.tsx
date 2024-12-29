@@ -7,17 +7,20 @@ import {
   AccordionPanel,
 } from "../src"
 
-test("passes a11y test", async () => {
-  await testA11y(
-    <Accordion>
+test.only("passes a11y test", async () => {
+  const accordion = (
+    <Accordion data-testid="test">
       <AccordionItem>
         <h2>
           <AccordionButton>Section 1 title</AccordionButton>
         </h2>
         <AccordionPanel>Panel 1</AccordionPanel>
       </AccordionItem>
-    </Accordion>,
+    </Accordion>
   )
+  await testA11y(accordion)
+
+  await expect(screen.getByTestId("test")).toBeAccessibleAccordion()
 })
 
 test("uncontrolled: It opens the accordion panel", async () => {

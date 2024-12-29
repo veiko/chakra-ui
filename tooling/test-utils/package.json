@@ -32,6 +32,7 @@
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest-axe": "^3.5.4",
+    "jest-a11y": "^1.19.9",
     "jest-axe": "^6.0.0"
   },
   "peerDependencies": {
